@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Nov 11 16:59:18 2024
+# Process ID: 75348
+# Current directory: C:/Users/Amn Naqvi/Desktop/joystick/joystick.runs/synth_1
+# Command line: vivado.exe -log joystick.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source joystick.tcl
+# Log file: C:/Users/Amn Naqvi/Desktop/joystick/joystick.runs/synth_1/joystick.vds
+# Journal file: C:/Users/Amn Naqvi/Desktop/joystick/joystick.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source joystick.tcl -notrace
