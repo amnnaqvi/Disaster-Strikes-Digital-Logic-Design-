@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log joystick.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source joystick.tcl -notrace
+/bin/touch .write_bitstream.begin.rst
+EAStep vivado -log XADCdemo.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source XADCdemo.tcl -notrace
 
 

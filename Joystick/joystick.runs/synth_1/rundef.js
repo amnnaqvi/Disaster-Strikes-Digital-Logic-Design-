@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log joystick.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source joystick.tcl" );
+         "-log XADCdemo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source XADCdemo.tcl" );
 
 
 

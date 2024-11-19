@@ -6,4 +6,4 @@ REM          to be invoked for Vivado to track run status.
 REM Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 REM
 
-vivado -log joystick.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source joystick.tcl -notrace
+vivado -log XADCdemo.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source XADCdemo.tcl -notrace
