@@ -114,7 +114,7 @@ module TopLevelModule(
         .bullet_active(bullet_active)
     );
     
-    // Update color logic to include bullet rendering
+    // Game objects rendering
     always @(posedge clk_d) begin
         if (~video_on) begin
             red_reg <= 4'h0;
