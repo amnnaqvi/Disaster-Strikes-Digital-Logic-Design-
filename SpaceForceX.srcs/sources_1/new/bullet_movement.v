@@ -34,8 +34,8 @@ module bullet_movement(
     parameter SCREEN_HEIGHT = 480;    
     parameter BULLET_WIDTH = 2;       
     parameter BULLET_HEIGHT = 10;    
-    parameter TANK_WIDTH = 32;       // Updated to match new tank sprite width
-    parameter TANK_Y = SCREEN_HEIGHT - 50;  
+    parameter TANK_WIDTH = 32;       
+    parameter TANK_Y = SCREEN_HEIGHT - 80;  
     parameter MOVE_INTERVAL = 100000;  
     parameter SHOT_COOLDOWN = 1000000; 
 
