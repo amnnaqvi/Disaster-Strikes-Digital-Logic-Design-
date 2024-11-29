@@ -18,7 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 module TopLevelModule(
     input clk,                    
     input reset,                  // Reset input
@@ -47,6 +46,9 @@ module TopLevelModule(
     wire [9:0] tank_x;            
     wire bullet_active;    
     reg [3:0] red_reg, green_reg, blue_reg;  
+    
+    // Score register (initialize to 0)
+    reg [7:0] game_score = 8'd0;
     
     // Clock divider
     clk_div clkDivider (
@@ -129,10 +131,10 @@ module TopLevelModule(
                 blue_reg <= 4'hF;
             end
             else if (tank_pixel_on) begin
-                // Yellow color for tank
-                red_reg <= 4'hF;
-                green_reg <= 4'hF;
-                blue_reg <= 4'h0;
+                // Dark blue color for tank
+                red_reg <= 4'h0;
+                green_reg <= 4'h0;
+                blue_reg <= 4'hA;
             end
             else if (bullet_pixel_on) begin
                 // White color for bullets
@@ -148,6 +150,7 @@ module TopLevelModule(
             end
         end
     end
+    
     
     // Assign RGB outputs
     assign red = red_reg;
