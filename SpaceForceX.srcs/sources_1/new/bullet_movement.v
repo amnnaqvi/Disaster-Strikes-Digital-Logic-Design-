@@ -34,29 +34,29 @@ module bullet_movement(
     parameter SCREEN_HEIGHT = 480;    
     parameter BULLET_WIDTH = 2;       
     parameter BULLET_HEIGHT = 10;    
-    parameter TANK_WIDTH = 30;       
+    parameter TANK_WIDTH = 32;       // Updated to match new tank sprite width
     parameter TANK_Y = SCREEN_HEIGHT - 50;  
-    parameter MOVE_INTERVAL = 100000;  // Clock cycles between bullet movements
-    parameter SHOT_COOLDOWN = 1000000; // Clock cycles between allowed shots
+    parameter MOVE_INTERVAL = 100000;  
+    parameter SHOT_COOLDOWN = 1000000; 
 
     localparam [2:0] 
-        IDLE = 3'b000,          // Waiting for input
-        SHOT = 3'b001,          // Creating new bullet
-        MOVING = 3'b010,        // Updating bullet position
-        COOLDOWN = 3'b011,      // Waiting after shot
-        PAUSED = 3'b100;        // Game paused
+        IDLE = 3'b000,          
+        SHOT = 3'b001,          
+        MOVING = 3'b010,        
+        COOLDOWN = 3'b011,      
+        PAUSED = 3'b100;        
 
     // State tracking registers
     reg [2:0] current_state, next_state;
-    reg [2:0] pre_pause_state;  // Stores state before pausing
+    reg [2:0] pre_pause_state;  
 
     // Single bullet position tracking
-    reg [9:0] bullet_x;         // X position of bullet
-    reg [9:0] bullet_y;         // Y position of bullet
+    reg [9:0] bullet_x;         
+    reg [9:0] bullet_y;         
     
     // Timing counters
-    reg [20:0] move_counter;    // Controls bullet movement speed
-    reg [20:0] shot_cooldown;   // Controls firing rate
+    reg [20:0] move_counter;    
+    reg [20:0] shot_cooldown;   
 
     always @(posedge clk or posedge reset) begin
         if (reset)
@@ -67,7 +67,7 @@ module bullet_movement(
 
     // Next state logic
     always @* begin
-        next_state = current_state;  // Default: stay in current state
+        next_state = current_state;  
         
         case (current_state)
             IDLE: begin
@@ -88,7 +88,7 @@ module bullet_movement(
                 if (center_switch)
                     next_state = PAUSED;
                 else if (move_counter >= MOVE_INTERVAL) begin
-                    if (!bullet_active)           // Go to cooldown if bullet is not active
+                    if (!bullet_active)           
                         next_state = COOLDOWN;
                     else
                         next_state = MOVING;
@@ -104,7 +104,7 @@ module bullet_movement(
             
             PAUSED: begin
                 if (center_switch)
-                    next_state = pre_pause_state;   // Return to previous state when unpaused
+                    next_state = pre_pause_state;   
             end
             
             default: next_state = IDLE;
@@ -113,7 +113,7 @@ module bullet_movement(
 
     // State actions and bullet management
     always @(posedge clk) begin
-        if (reset) begin           // Initialize all variables on reset
+        if (reset) begin           
             bullet_active <= 0; 
             bullet_x <= 0;
             bullet_y <= 0;
@@ -122,7 +122,7 @@ module bullet_movement(
             pre_pause_state <= IDLE;
         end
         else begin
-            if (current_state != PAUSED) begin    // Update counters if not paused
+            if (current_state != PAUSED) begin    
                 move_counter <= move_counter + 1;
                 shot_cooldown <= shot_cooldown + 1;
             end
@@ -136,16 +136,17 @@ module bullet_movement(
                     // wait for input, counters still increment
                 end
                 
-                SHOT: begin     // Create new bullet at tank position
+                SHOT: begin     
                     if (!bullet_active) begin
-                        bullet_x <= tank_x + TANK_WIDTH/2;  // Center of tank
-                        bullet_y <= TANK_Y;                 // Top of tank
+                        // Center the bullet on the tank's barrel (adjusted for new sprite)
+                        bullet_x <= tank_x + (TANK_WIDTH / 2) - (BULLET_WIDTH / 2);  
+                        bullet_y <= TANK_Y - 10;  // Position just above the tank                
                         bullet_active <= 1;
                     end
                     shot_cooldown <= 0;  // Reset cooldown
                 end
                 
-                MOVING: begin    // Update bullet position every MOVE_INTERVAL
+                MOVING: begin    
                     if (move_counter >= MOVE_INTERVAL) begin
                         move_counter <= 0;
                         if (bullet_active) begin
