@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 11/29/2024 01:16:06 PM
+// Design Name: 
+// Module Name: TopLevelModule
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 module TopLevelModule(
     input clk,                    // System clock
     input reset,                  // Reset input
@@ -85,14 +105,14 @@ module TopLevelModule(
         .v_count(v_count)
     );
     
-    wire h_sync_wire; 
-    wire v_sync_wire; 
+//    wire h_sync_wire; 
+//    wire v_sync_wire; 
     // VGA sync module
     vga_sync vgaSync (
         .h_count(h_count),
         .v_count(v_count),
-        .h_sync(h_sync_wire),
-        .v_sync(v_sync_wire),
+        .h_sync(h_sync),
+        .v_sync(v_sync),
         .video_on(video_on),
         .x_loc(pixel_x),
         .y_loc(pixel_y)
@@ -208,13 +228,14 @@ module TopLevelModule(
     assign tank_hit = tank_hit_level1 || tank_hit_level2;
     
     // All aliens destroyed logic
-    assign all_aliens_destroyed = (current_level == 2'b01 && game_score >= 9'd200) || // Level 1 complete
-                                   (current_level == 2'b10 && game_score >= 9'd400); // Game complete
+assign all_aliens_destroyed = (current_level == 2'b01 && game_score >= 9'd200) || // Level 1 complete
+                               (current_level == 2'b10 && game_score >= 9'd350); // Game complete
     
     // Alien movement modules for different levels
     aliens_movement_level1 alienCtrl_Level1 (
         .clk(clk_d),
         .reset(reset),
+        .level_reset(level_reset),
         .center_switch(PAUSE),
         .pixel_x(pixel_x),
         .pixel_y(pixel_y),
@@ -226,17 +247,18 @@ module TopLevelModule(
     );
     
     aliens_movement_level2 alienCtrl_Level2 (
-        .clk(clk_d),
-        .reset(reset),
-        .center_switch(PAUSE),
-        .pixel_x(pixel_x),
-        .pixel_y(pixel_y),
-        .bullet_hit(bullet_active),
-        .bullet_x(bullet_x),
-        .bullet_y(bullet_y),
-        .pixel_on(alien_pixel_on_level2),
-        .bullet_collision_confirmed(bullet_collision_confirmed_level2)
-    );
+    .clk(clk_d),
+    .reset(reset),
+    .level_reset(level_reset),  // Map the level_reset signal from game_state_fsm
+    .center_switch(PAUSE),
+    .pixel_x(pixel_x),
+    .pixel_y(pixel_y),
+    .bullet_hit(bullet_active),
+    .bullet_x(bullet_x),
+    .bullet_y(bullet_y),
+    .pixel_on(alien_pixel_on_level2),
+    .bullet_collision_confirmed(bullet_collision_confirmed_level2)
+);
     
     // Alien pixel and collision signals based on current level
     assign alien_pixel_on = (current_level == 2'b01) ? alien_pixel_on_level1 : 
@@ -286,7 +308,8 @@ module TopLevelModule(
         .bullet_x(bullet_x),
         .bullet_y(bullet_y)
     );
-   
+
+    
  // Start Screen Module
     wire start_h_sync, start_v_sync;
     wire [3:0] start_red, start_green, start_blue;
@@ -344,17 +367,16 @@ module TopLevelModule(
     reg h_sync_reg, v_sync_reg; // Add sync registers
 
     
-/// PIXEL RENDERING 
-    always @(posedge clk_d) begin
-        if (~video_on) begin
+always @(posedge clk_d) begin
+    if (~video_on) begin
             red_reg <= 4'h0;
             green_reg <= 4'h0;
             blue_reg <= 4'h0;
-            h_sync_reg <= h_sync_wire;
-            v_sync_reg <= v_sync_wire;
-        end
-        else begin
-            case (game_state)
+//            h_sync_reg <= h_sync_wire;
+//            v_sync_reg <= v_sync_wire;
+    end
+    else begin
+        case (game_state)
                 3'b000: begin  // Start Screen
                     h_sync_reg <= start_h_sync;
                     v_sync_reg <= start_v_sync;
@@ -362,30 +384,13 @@ module TopLevelModule(
                     green_reg <= start_green;
                     blue_reg <= start_blue;
                 end
-                
-                3'b001: begin  // PLAYING state
+            
+            3'b001: begin  // PLAYING_LEVEL1 state
                 if (alien_pixel_on) begin
-                    // Change alien color based on current level
-                    case (current_level)
-                        2'b01: begin
-                            // Pink color for Level 1 aliens
-                            red_reg <= 4'hF;
-                            green_reg <= 4'h8;
-                            blue_reg <= 4'hF;
-                        end
-                        2'b10: begin
-                            // Green color for Level 2 aliens
-                            red_reg <= 4'h0;
-                            green_reg <= 4'hB;
-                            blue_reg <= 4'h0;
-                        end
-                        default: begin
-                            // Default to pink
-                            red_reg <= 4'hF;
-                            green_reg <= 4'h8;
-                            blue_reg <= 4'hF;
-                        end
-                    endcase
+                    // Pink color for Level 1 aliens
+                    red_reg <= 4'hF;
+                    green_reg <= 4'h8;
+                    blue_reg <= 4'hF;
                 end
                 else if (tank_pixel_on) begin
                     // Dark blue color for tank
@@ -413,31 +418,64 @@ module TopLevelModule(
                 end
             end
             
-                             3'b010: begin  // Level 1 Win Screen
+            3'b010: begin  // Level 1 Win Screen
                     h_sync_reg <= win1_h_sync;
                     v_sync_reg <= win1_v_sync;
                     red_reg <= win1_red;
                     green_reg <= win1_green;
                     blue_reg <= win1_blue;
                 end
-                
-                3'b011: begin  // LEVEL 2 WIN state
-                    h_sync_reg <= win2_h_sync;
-                    v_sync_reg <= win2_v_sync;
-                    red_reg <= win2_red;
-                    green_reg <= win2_green;
-                    blue_reg <= win2_blue;
+            
+            3'b011: begin  // PLAYING_LEVEL2 state
+                if (alien_pixel_on) begin
+                    // Green color for Level 2 aliens
+                    red_reg <= 4'h0;
+                    green_reg <= 4'hB;
+                    blue_reg <= 4'h0;
                 end
-                
-                3'b100: begin  // Lose Screen
+                else if (tank_pixel_on) begin
+                    // Dark blue color for tank
+                    red_reg <= 4'h0;
+                    green_reg <= 4'h0;
+                    blue_reg <= 4'hA;
+                end
+                else if (bullet_pixel_on) begin
+                    // White color for bullets
+                    red_reg <= 4'hF;
+                    green_reg <= 4'hF;
+                    blue_reg <= 4'hF;
+                end
+                else if (score_display_on && score_display_pixel) begin
+                    // White color for score text
+                    red_reg <= 4'hF;
+                    green_reg <= 4'hF;
+                    blue_reg <= 4'hF;
+                end
+                else begin
+                    // Black background
+                    red_reg <= 4'h0;
+                    green_reg <= 4'h0;
+                    blue_reg <= 4'h0;
+                end
+            end
+            
+            3'b100: begin  // Lose Screen
                     h_sync_reg <= lose_h_sync;
                     v_sync_reg <= lose_v_sync;
                     red_reg <= lose_red;
                     green_reg <= lose_green;
                     blue_reg <= lose_blue;
                 end
-                
-                default: begin  // Fallback to Start Screen
+            
+            3'b101: begin  // LEVEL 2 WIN state
+                    h_sync_reg <= win2_h_sync;
+                    v_sync_reg <= win2_v_sync;
+                    red_reg <= win2_red;
+                    green_reg <= win2_green;
+                    blue_reg <= win2_blue;
+                end
+            
+             default: begin  // Fallback to Start Screen
                     h_sync_reg <= start_h_sync;
                     v_sync_reg <= start_v_sync;
                     red_reg <= start_red;
@@ -445,12 +483,9 @@ module TopLevelModule(
                     blue_reg <= start_blue;
                 end
             endcase
-        end
     end
-
-    // Final output assignments
-    assign h_sync = h_sync_reg;
-    assign v_sync = v_sync_reg;
+end
+    // Assign RGB outputs   
     assign red = red_reg;
     assign green = green_reg;
     assign blue = blue_reg;

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Thu Dec 12 16:08:49 2024
+| Date             : Thu Dec 12 17:37:20 2024
 | Host             : Amn-Naqvi running 64-bit major release  (build 9200)
 | Command          : report_power -file TopLevelModule_power_routed.rpt -pb TopLevelModule_power_summary_routed.pb -rpx TopLevelModule_power_routed.rpx
 | Design           : TopLevelModule
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.092        |
+| Total On-Chip Power (W)  | 0.090        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.020        |
+| Dynamic (W)              | 0.018        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.010 |     5261 |       --- |             --- |
-|   LUT as Logic |     0.009 |     3322 |     20800 |           15.97 |
-|   F7/F8 Muxes  |    <0.001 |      307 |     32600 |            0.94 |
-|   CARRY4       |    <0.001 |      240 |      8150 |            2.94 |
-|   Register     |    <0.001 |      581 |     41600 |            1.40 |
-|   BUFG         |    <0.001 |        4 |        32 |           12.50 |
-|   Others       |     0.000 |       51 |       --- |             --- |
-| Signals        |     0.009 |     3259 |       --- |             --- |
+| Slice Logic    |     0.008 |     7146 |       --- |             --- |
+|   LUT as Logic |     0.008 |     4244 |     20800 |           20.40 |
+|   F7/F8 Muxes  |    <0.001 |      321 |     32600 |            0.98 |
+|   CARRY4       |    <0.001 |      455 |      8150 |            5.58 |
+|   Register     |    <0.001 |      769 |     41600 |            1.85 |
+|   BUFG         |    <0.001 |        3 |        32 |            9.38 |
+|   Others       |     0.000 |       54 |       --- |             --- |
+| Signals        |     0.007 |     3901 |       --- |             --- |
 | I/O            |    <0.001 |       18 |       106 |           16.98 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.092 |          |           |                 |
+| Total          |     0.090 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.030 |       0.020 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.027 |       0.018 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -142,16 +142,17 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| TopLevelModule        |     0.020 |
-|   level1Win           |     0.004 |
-|     verticalCounter   |     0.003 |
-|   level2Win           |     0.004 |
-|     horizontalCounter |     0.001 |
-|     verticalCounter   |     0.003 |
+| TopLevelModule        |     0.018 |
+|   horizontalCounter   |     0.002 |
+|   k1                  |     0.001 |
+|   level1Win           |     0.003 |
+|     verticalCounter   |     0.002 |
+|   level2Win           |     0.003 |
+|     verticalCounter   |     0.002 |
 |   loseScreen          |     0.002 |
-|   startScreen         |     0.005 |
+|   startScreen         |     0.004 |
 |     horizontalCounter |     0.001 |
-|     verticalCounter   |     0.004 |
+|     verticalCounter   |     0.002 |
 +-----------------------+-----------+
 
 

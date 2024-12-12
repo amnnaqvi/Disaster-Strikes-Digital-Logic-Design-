@@ -22,7 +22,8 @@
 
 module aliens_movement_level1(
     input wire clk,              
-    input wire reset,            
+    input wire reset,
+    input wire level_reset,                
     input wire center_switch,     
     input wire [9:0] pixel_x,    
     input wire [9:0] pixel_y,    
@@ -172,7 +173,7 @@ module aliens_movement_level1(
             
     // movement and collision detection logic
     always @(posedge clk) begin
-        if (reset) begin
+        if (reset || level_reset) begin
             // Reset all previous logic
             for (i = 0; i < NUM_COLUMNS; i = i + 1) begin
                 for (j = 0; j < ALIENS_PER_COLUMN; j = j + 1) begin
@@ -185,6 +186,7 @@ module aliens_movement_level1(
             bullet_collision_confirmed <= 0;
             hit_column = 0;
             hit_row = 0;
+            current_state <= MOVING;
         end else begin
             // Reset collision confirmation each clock cycle
             bullet_collision_confirmed <= 0;

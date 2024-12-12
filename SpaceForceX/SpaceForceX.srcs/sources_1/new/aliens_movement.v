@@ -20,7 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module aliens_movement_level2(
     input wire clk,              
-    input wire reset,            
+    input wire reset,
+    input wire level_reset,            
     input wire center_switch,     
     input wire [9:0] pixel_x,    
     input wire [9:0] pixel_y,    
@@ -41,14 +42,14 @@ module aliens_movement_level2(
     parameter ALIEN_WIDTH = 32;
     parameter ALIEN_HEIGHT = 32;
     parameter NUM_COLUMNS = 5;
-    parameter ALIENS_PER_COLUMN = 4;
+    parameter ALIENS_PER_COLUMN = 3;
     parameter SCREEN_HEIGHT = 480;
     parameter MOVE_SPEED = 1;    
     parameter COLUMN_SPACING = 100;
     
     // Clock divider for controlling alien movement speed
     reg [19:0] move_counter = 0;
-    parameter MOVE_INTERVAL = 600000; 
+    parameter MOVE_INTERVAL = 1000000; 
     
     // Individual alien tracking
     reg [9:0] alien_x [0:NUM_COLUMNS-1][0:ALIENS_PER_COLUMN-1];
@@ -153,19 +154,21 @@ module aliens_movement_level2(
     
     // Movement and collision detection logic
     always @(posedge clk) begin
-        if (reset) begin
-            // Reset all previous logic
-            for (i = 0; i < NUM_COLUMNS; i = i + 1) begin
-                for (j = 0; j < ALIENS_PER_COLUMN; j = j + 1) begin
-                    alien_x[i][j] <= 100 + (i * COLUMN_SPACING) + (j * 20);
-                    alien_y[i][j] <= 50 + (j * 50);
-                    alien_alive[i][j] <= 1'b1;
-                end
+    if (reset || level_reset) begin  // Add level_reset here
+        // Reset all previous logic
+        for (i = 0; i < NUM_COLUMNS; i = i + 1) begin
+            for (j = 0; j < ALIENS_PER_COLUMN; j = j + 1) begin
+                // Reset to original top positions
+                alien_x[i][j] <= 100 + (i * COLUMN_SPACING) + (j * 20);
+                alien_y[i][j] <= 50 + (j * 50);  // Start from top
+                alien_alive[i][j] <= 1'b1;
             end
-            move_counter <= 0;
-            bullet_collision_confirmed <= 0;
-            first_hit_column = 0;
-            first_hit_row = 0;
+        end
+        move_counter <= 0;
+        bullet_collision_confirmed <= 0;
+        first_hit_column = 0;
+        first_hit_row = 0;
+        current_state <= MOVING;
         end else begin
             // Reset collision confirmation each clock cycle
             bullet_collision_confirmed <= 0;

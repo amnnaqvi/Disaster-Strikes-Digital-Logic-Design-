@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.runs/synth_1/TopLevelModule.tcl"
+  variable script "C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.runs/synth_1/TopLevelModule.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,43 +71,44 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.cache/ip} [current_project]
+set_property ip_output_repo {c:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/1_Win_Bitmap.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/2_Win_Bitmap.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level1_Win.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level2_Win.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level_Lose.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Lose_Bitmap.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Start_Bitmap.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Start_Screen.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/clk_div.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/h_counter.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/keyboard_1.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ps2_rx.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/tank_control.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/textGeneration.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/v_counter.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/vga_sync.v}
-  {C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/clk_div.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/h_counter.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/keyboard_1.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/level1_win.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/level2_win.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/lose_bmp.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/lose_screen.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/ps2_rx.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/start_bmp.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/startscreen.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/tank_control.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/textGeneration.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/v_counter.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/vga_sync.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/win1_bmp.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/win2_bmp.v}
+  {C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -118,8 +119,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc}}]
+read_xdc {{C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/Amn Naqvi/Downloads/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

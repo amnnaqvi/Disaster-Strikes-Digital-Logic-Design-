@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Thu Dec 12 16:08:47 2024
+| Date         : Thu Dec 12 17:37:16 2024
 | Host         : Amn-Naqvi running 64-bit major release  (build 9200)
 | Command      : report_drc -file TopLevelModule_drc_routed.rpt -pb TopLevelModule_drc_routed.pb -rpx TopLevelModule_drc_routed.rpx
 | Design       : TopLevelModule
@@ -24,31 +24,41 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 4
+             Violations found: 6
 +----------+----------+-------------------+------------+
 | Rule     | Severity | Description       | Violations |
 +----------+----------+-------------------+------------+
-| PDRC-153 | Warning  | Gated clock check | 4          |
+| PDRC-153 | Warning  | Gated clock check | 6          |
 +----------+----------+-------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
-Net horizontalCounter/current_alien_row_reg[0]_i_4_1[0] is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_row_reg[0]_i_2/O, cell horizontalCounter/current_alien_row_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net horizontalCounter/current_alien_col_reg[2]_i_4_0[0] is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_col_reg[2]_i_2/O, cell horizontalCounter/current_alien_col_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net horizontalCounter/current_alien_row_reg[1]_i_14_0 is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_row_reg[1]_i_2/O, cell horizontalCounter/current_alien_row_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net horizontalCounter/current_alien_row_reg[1]_i_13_0[0] is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_row_reg[0]_i_2/O, cell horizontalCounter/current_alien_row_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net horizontalCounter/current_alien_row_reg[1]_i_2_0[0] is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_col_reg[2]_i_2/O, cell horizontalCounter/current_alien_col_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net horizontalCounter/current_alien_row_reg[1]_i_13_0[1] is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_row_reg[1]_i_2/O, cell horizontalCounter/current_alien_row_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
+Gated clock check  
+Net horizontalCounter/current_alien_row_reg[1]_i_14__0_0 is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_col_reg[2]_i_3__0/O, cell horizontalCounter/current_alien_col_reg[2]_i_3__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net horizontalCounter/current_alien_row_reg[1]_i_14__0_1[0] is a gated clock net sourced by a combinational pin horizontalCounter/current_alien_row_reg[1]_i_2__0/O, cell horizontalCounter/current_alien_row_reg[1]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
 Gated clock check  
 Net score_rom/data_reg[7]_i_2_n_0 is a gated clock net sourced by a combinational pin score_rom/data_reg[7]_i_2/O, cell score_rom/data_reg[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
