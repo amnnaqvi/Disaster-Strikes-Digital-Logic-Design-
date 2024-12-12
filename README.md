@@ -1,4 +1,4 @@
-# Space Force X - Digital Logic Design Project (Fall 2024)
+# Space Force X - Team Disaster Strikes
 
 ## Overview
 **Space Force X** is a Verilog-based video game created using Vivado for the Basys3 Artix-7 FPGA with VGA output. Players control a tank using a PS/2 keyboard to shoot descending aliens. The game features dynamic levels, progressive difficulty, score tracking, and Game Over/Win screens.
