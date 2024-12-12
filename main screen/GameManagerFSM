@@ -1,0 +1,21 @@
+digraph GameManagerFSM {
+	rankdir=LR size=12
+	STATE_MAIN_MENU [label="Main Menu" shape=ellipse]
+	STATE_LEVEL1 [label="Level 1" shape=ellipse]
+	STATE_LEVEL1_LOSE [label="Level 1 Lose" shape=ellipse]
+	STATE_LEVEL1_WIN [label="Level 1 Win" shape=ellipse]
+	STATE_LEVEL2 [label="Level 2" shape=ellipse]
+	STATE_LEVEL2_LOSE [label="Level 2 Lose" shape=ellipse]
+	STATE_LEVEL2_WIN [label="Level 2 Win" shape=ellipse]
+	STATE_MAIN_MENU -> STATE_LEVEL1 [label="Spacebar Pressed"]
+	STATE_LEVEL1 -> STATE_LEVEL1 [label="Continue Level 1 (00)"]
+	STATE_LEVEL1 -> STATE_LEVEL1_LOSE [label="Lose (01)"]
+	STATE_LEVEL1 -> STATE_LEVEL1_WIN [label="Win (10)"]
+	STATE_LEVEL1_LOSE -> STATE_MAIN_MENU [label="Spacebar Pressed"]
+	STATE_LEVEL1_WIN -> STATE_LEVEL2 [label="Spacebar Pressed"]
+	STATE_LEVEL2 -> STATE_LEVEL2 [label="Continue Level 2 (00)"]
+	STATE_LEVEL2 -> STATE_LEVEL2_LOSE [label="Lose (01)"]
+	STATE_LEVEL2 -> STATE_LEVEL2_WIN [label="Win (10)"]
+	STATE_LEVEL2_LOSE -> STATE_MAIN_MENU [label="Spacebar Pressed"]
+	STATE_LEVEL2_WIN -> STATE_MAIN_MENU [label="Spacebar Pressed"]
+}

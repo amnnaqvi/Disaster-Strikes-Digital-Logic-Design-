@@ -34,6 +34,7 @@ module TopLevelModule(
     wire [9:0] pixel_y;            // Current pixel y-coordinate
     wire video_on;                 // VGA video enable signal
     wire trig_v;                   // Vertical trigger signal for VGA sync
+reg [3:0] red_reg, green_reg, blue_reg; // Registers for RGB values
 
     // Keyboard signals
     wire SPACE, UP, DOWN, LEFT, RIGHT, PAUSE, RESET, SPECIAL;   
@@ -45,7 +46,7 @@ module TopLevelModule(
     wire bullet_pixel_on;          // Bullet pixel rendering signal
     wire [9:0] tank_x;             // Tank position
     wire bullet_active;            // Bullet activity state
-    reg [3:0] red_reg, green_reg, blue_reg; // Registers for RGB values
+    
     
     // Score register (initialize to 0)
     reg [7:0] game_score = 8'd0;
