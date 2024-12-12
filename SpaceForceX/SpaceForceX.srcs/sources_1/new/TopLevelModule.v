@@ -105,8 +105,6 @@ module TopLevelModule(
         .v_count(v_count)
     );
     
-//    wire h_sync_wire; 
-//    wire v_sync_wire; 
     // VGA sync module
     vga_sync vgaSync (
         .h_count(h_count),
@@ -362,18 +360,15 @@ assign all_aliens_destroyed = (current_level == 2'b01 && game_score >= 9'd200) |
         .blue(lose_blue)
     );
 
-    // Remove previous RGB registration
-    reg [3:0] red_reg, green_reg, blue_reg; // Keep for internal rendering
-    reg h_sync_reg, v_sync_reg; // Add sync registers
+    reg [3:0] red_reg, green_reg, blue_reg; 
+    reg h_sync_reg, v_sync_reg; // sync registers
 
-    
+// Pixel rendering
 always @(posedge clk_d) begin
     if (~video_on) begin
             red_reg <= 4'h0;
             green_reg <= 4'h0;
             blue_reg <= 4'h0;
-//            h_sync_reg <= h_sync_wire;
-//            v_sync_reg <= v_sync_wire;
     end
     else begin
         case (game_state)
