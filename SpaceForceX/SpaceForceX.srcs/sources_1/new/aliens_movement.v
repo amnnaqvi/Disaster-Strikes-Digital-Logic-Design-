@@ -116,7 +116,7 @@ module aliens_movement_level2(
         current_state = MOVING;
     end
 
-    // State transition logic (remains the same)
+    // State transition logic
     always @(posedge clk or posedge reset) begin
         if (reset)
             current_state <= MOVING;
@@ -124,7 +124,7 @@ module aliens_movement_level2(
             current_state <= next_state;
     end
 
-    // Next state logic (remains the same)
+    // Next state logic 
     always @* begin
         next_state = current_state;
         
@@ -154,7 +154,7 @@ module aliens_movement_level2(
     
     // Movement and collision detection logic
     always @(posedge clk) begin
-    if (reset || level_reset) begin  // Add level_reset here
+    if (reset || level_reset) begin  
         // Reset all previous logic
         for (i = 0; i < NUM_COLUMNS; i = i + 1) begin
             for (j = 0; j < ALIENS_PER_COLUMN; j = j + 1) begin
@@ -204,8 +204,7 @@ module aliens_movement_level2(
                 // Iterate through all aliens to find the first hit
                 for (i = 0; i < NUM_COLUMNS && !hit_found; i = i + 1) begin
                     for (j = 0; j < ALIENS_PER_COLUMN && !hit_found; j = j + 1) begin
-                        // Check if the bullet is within the alien's bounding box
-                        // AND the alien is still alive
+                        // Check if the bullet is within the alien's bounding box and the alien is still alive
                         if (alien_alive[i][j] &&
                             bullet_x >= alien_x[i][j] && 
                             bullet_x < alien_x[i][j] + ALIEN_WIDTH &&
@@ -254,7 +253,6 @@ module aliens_movement_level2(
             end
         end
         
-        // Rendering logic 
         if (in_alien_region && 
             !alien_alive[current_alien_col][current_alien_row]) begin
             pixel_on = 0;  // Only the hit alien turns black
