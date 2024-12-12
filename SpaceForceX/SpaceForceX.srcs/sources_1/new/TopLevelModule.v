@@ -1,23 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/29/2024 01:16:06 PM
-// Design Name: 
-// Module Name: TopLevelModule
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 module TopLevelModule(
     input clk,                    // System clock
     input reset,                  // Reset input
@@ -56,7 +36,8 @@ module TopLevelModule(
     reg [3:0] red_reg, green_reg, blue_reg; // Registers for RGB values
     
     // Game state and level signals
-    wire [1:0] game_state, current_level;
+    wire [2:0] game_state;  
+    wire [1:0] current_level;
     wire level_reset;  // handle level resets
     wire tank_hit;     // Signal to indicate tank is hit by alien
     wire all_aliens_destroyed;  // Signal to indicate all aliens are destroyed
@@ -104,12 +85,14 @@ module TopLevelModule(
         .v_count(v_count)
     );
     
+    wire h_sync_wire; 
+    wire v_sync_wire; 
     // VGA sync module
     vga_sync vgaSync (
         .h_count(h_count),
         .v_count(v_count),
-        .h_sync(h_sync),
-        .v_sync(v_sync),
+        .h_sync(h_sync_wire),
+        .v_sync(v_sync_wire),
         .video_on(video_on),
         .x_loc(pixel_x),
         .y_loc(pixel_y)
@@ -303,25 +286,84 @@ module TopLevelModule(
         .bullet_x(bullet_x),
         .bullet_y(bullet_y)
     );
+   
+ // Start Screen Module
+    wire start_h_sync, start_v_sync;
+    wire [3:0] start_red, start_green, start_blue;
+    start_screen startScreen (
+        .clk(clk),
+        .reset(reset),
+        .h_sync(start_h_sync),
+        .v_sync(start_v_sync),
+        .red(start_red),
+        .green(start_green),
+        .blue(start_blue)
+    );
+
+    // Level 1 Win Screen Module
+    wire win1_h_sync, win1_v_sync;
+    wire [3:0] win1_red, win1_green, win1_blue;
+    level1_win_screen level1Win (
+        .clk(clk),
+        .reset(reset),
+        .h_sync(win1_h_sync),
+        .v_sync(win1_v_sync),
+        .red(win1_red),
+        .green(win1_green),
+        .blue(win1_blue)
+    );
+
+    // Level 2 Win Screen Module
+    wire win2_h_sync, win2_v_sync;
+    wire [3:0] win2_red, win2_green, win2_blue;
+    level2_win_screen level2Win (
+        .clk(clk),
+        .reset(reset),
+        .h_sync(win2_h_sync),
+        .v_sync(win2_v_sync),
+        .red(win2_red),
+        .green(win2_green),
+        .blue(win2_blue)
+    );
+
+    // Lose Screen Module
+    wire lose_h_sync, lose_v_sync;
+    wire [3:0] lose_red, lose_green, lose_blue;
+    lose_screen loseScreen (
+        .clk(clk),
+        .reset(reset),
+        .h_sync(lose_h_sync),
+        .v_sync(lose_v_sync),
+        .red(lose_red),
+        .green(lose_green),
+        .blue(lose_blue)
+    );
+
+    // Remove previous RGB registration
+    reg [3:0] red_reg, green_reg, blue_reg; // Keep for internal rendering
+    reg h_sync_reg, v_sync_reg; // Add sync registers
 
     
-    /// PIXEL RENDERING 
-always @(posedge clk_d) begin
-    if (~video_on) begin
-        red_reg <= 4'h0;
-        green_reg <= 4'h0;
-        blue_reg <= 4'h0;
-    end
-    else begin
-        case (game_state)
-            2'b00: begin  // START_SCREEN state
-                // Dark background for start screen
-                red_reg <= 4'h2;
-                green_reg <= 4'h2;
-                blue_reg <= 4'h4;
-            end
-            
-            2'b01: begin  // PLAYING state
+/// PIXEL RENDERING 
+    always @(posedge clk_d) begin
+        if (~video_on) begin
+            red_reg <= 4'h0;
+            green_reg <= 4'h0;
+            blue_reg <= 4'h0;
+            h_sync_reg <= h_sync_wire;
+            v_sync_reg <= v_sync_wire;
+        end
+        else begin
+            case (game_state)
+                3'b000: begin  // Start Screen
+                    h_sync_reg <= start_h_sync;
+                    v_sync_reg <= start_v_sync;
+                    red_reg <= start_red;
+                    green_reg <= start_green;
+                    blue_reg <= start_blue;
+                end
+                
+                3'b001: begin  // PLAYING state
                 if (alien_pixel_on) begin
                     // Change alien color based on current level
                     case (current_level)
@@ -371,36 +413,44 @@ always @(posedge clk_d) begin
                 end
             end
             
-            2'b10: begin  // LEVEL 1 WIN or FINAL WIN state
-                if (current_level == 2'b01) begin
-                    // Soft blue for Level 1 WIN screen
-                    red_reg <= 4'h0;
-                    green_reg <= 4'h6;
-                    blue_reg <= 4'hA;
-                end else begin
-                    // Green for final WIN screen
-                    red_reg <= 4'h0;
-                    green_reg <= 4'hF;
-                    blue_reg <= 4'h0;
+                             3'b010: begin  // Level 1 Win Screen
+                    h_sync_reg <= win1_h_sync;
+                    v_sync_reg <= win1_v_sync;
+                    red_reg <= win1_red;
+                    green_reg <= win1_green;
+                    blue_reg <= win1_blue;
                 end
-            end
-            
-            2'b11: begin  // LOSE state (Red screen)
-                red_reg <= 4'hF;
-                green_reg <= 4'h0;
-                blue_reg <= 4'h0;
-            end
-            
-            default: begin
-                // Default to black
-                red_reg <= 4'h0;
-                green_reg <= 4'h0;
-                blue_reg <= 4'h0;
-            end
-        endcase
+                
+                3'b011: begin  // LEVEL 2 WIN state
+                    h_sync_reg <= win2_h_sync;
+                    v_sync_reg <= win2_v_sync;
+                    red_reg <= win2_red;
+                    green_reg <= win2_green;
+                    blue_reg <= win2_blue;
+                end
+                
+                3'b100: begin  // Lose Screen
+                    h_sync_reg <= lose_h_sync;
+                    v_sync_reg <= lose_v_sync;
+                    red_reg <= lose_red;
+                    green_reg <= lose_green;
+                    blue_reg <= lose_blue;
+                end
+                
+                default: begin  // Fallback to Start Screen
+                    h_sync_reg <= start_h_sync;
+                    v_sync_reg <= start_v_sync;
+                    red_reg <= start_red;
+                    green_reg <= start_green;
+                    blue_reg <= start_blue;
+                end
+            endcase
+        end
     end
-end
-    // Assign RGB outputs   
+
+    // Final output assignments
+    assign h_sync = h_sync_reg;
+    assign v_sync = v_sync_reg;
     assign red = red_reg;
     assign green = green_reg;
     assign blue = blue_reg;

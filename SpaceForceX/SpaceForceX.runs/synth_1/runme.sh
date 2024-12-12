@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/ms08752/SpaceForceX/SpaceForceX.runs/synth_1'
+HD_PWD='C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

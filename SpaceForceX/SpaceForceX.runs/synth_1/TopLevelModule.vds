@@ -2,12 +2,12 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Dec 12 14:24:24 2024
-# Process ID: 3664
-# Current directory: C:/Users/ms08752/SpaceForceX/SpaceForceX.runs/synth_1
+# Start of session at: Thu Dec 12 16:06:30 2024
+# Process ID: 9800
+# Current directory: C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.runs/synth_1
 # Command line: vivado.exe -log TopLevelModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopLevelModule.tcl
-# Log file: C:/Users/ms08752/SpaceForceX/SpaceForceX.runs/synth_1/TopLevelModule.vds
-# Journal file: C:/Users/ms08752/SpaceForceX/SpaceForceX.runs/synth_1\vivado.jou
+# Log file: C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.runs/synth_1/TopLevelModule.vds
+# Journal file: C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source TopLevelModule.tcl -notrace
 Command: synth_design -top TopLevelModule -part xc7a35tcpg236-1
@@ -17,26 +17,31 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 9088
+INFO: [Synth 8-7075] Helper process launched with PID 20744
+CRITICAL WARNING: [Synth 8-976] red_reg has already been declared [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:343]
+CRITICAL WARNING: [Synth 8-2654] second declaration of red_reg ignored [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:343]
+INFO: [Synth 8-994] red_reg is declared here [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:36]
+INFO: [Synth 8-994] green_reg is declared here [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:36]
+INFO: [Synth 8-994] blue_reg is declared here [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:36]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1048.395 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1030.930 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'TopLevelModule' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:21]
-INFO: [Synth 8-6157] synthesizing module 'keyboard_1' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/keyboard_1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ps2_rx' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/ps2_rx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'TopLevelModule' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:1]
+INFO: [Synth 8-6157] synthesizing module 'keyboard_1' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/keyboard_1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ps2_rx' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ps2_rx.v:23]
 	Parameter idle bound to: 2'b00 
 	Parameter dps bound to: 2'b01 
 	Parameter load bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'ps2_rx' (1#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/ps2_rx.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'keyboard_1' (2#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/keyboard_1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_div' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/clk_div.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ps2_rx' (1#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ps2_rx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'keyboard_1' (2#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/keyboard_1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/clk_div.v:23]
 	Parameter div_value bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clk_div' (3#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/clk_div.v:23]
-INFO: [Synth 8-6157] synthesizing module 'h_counter' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/h_counter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'h_counter' (4#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/h_counter.v:23]
-INFO: [Synth 8-6157] synthesizing module 'v_counter' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/v_counter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'v_counter' (5#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/v_counter.v:23]
-INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/vga_sync.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (3#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/clk_div.v:23]
+INFO: [Synth 8-6157] synthesizing module 'h_counter' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/h_counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'h_counter' (4#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/h_counter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'v_counter' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/v_counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'v_counter' (5#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/v_counter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/vga_sync.v:22]
 	Parameter HD bound to: 640 - type: integer 
 	Parameter HF bound to: 16 - type: integer 
 	Parameter HB bound to: 48 - type: integer 
@@ -45,13 +50,13 @@ INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/ms08752/SpaceForce
 	Parameter VF bound to: 10 - type: integer 
 	Parameter VB bound to: 33 - type: integer 
 	Parameter VR bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (6#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/vga_sync.v:22]
-INFO: [Synth 8-6157] synthesizing module 'textGeneration' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/textGeneration.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'textGeneration' (7#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/textGeneration.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ascii_rom' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:38]
-INFO: [Synth 8-6155] done synthesizing module 'ascii_rom' (8#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:23]
-INFO: [Synth 8-6157] synthesizing module 'aliens_movement_level1' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (6#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/vga_sync.v:22]
+INFO: [Synth 8-6157] synthesizing module 'textGeneration' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/textGeneration.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'textGeneration' (7#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/textGeneration.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ascii_rom' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'ascii_rom' (8#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:23]
+INFO: [Synth 8-6157] synthesizing module 'aliens_movement_level1' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:23]
 	Parameter MOVING bound to: 3'b000 
 	Parameter PAUSED bound to: 3'b001 
 	Parameter ALIEN_HIT bound to: 3'b010 
@@ -63,8 +68,8 @@ INFO: [Synth 8-6157] synthesizing module 'aliens_movement_level1' [C:/Users/ms08
 	Parameter MOVE_SPEED bound to: 1 - type: integer 
 	Parameter COLUMN_SPACING bound to: 100 - type: integer 
 	Parameter MOVE_INTERVAL bound to: 1000000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'aliens_movement_level1' (9#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'aliens_movement_level2' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'aliens_movement_level1' (9#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'aliens_movement_level2' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:21]
 	Parameter MOVING bound to: 3'b000 
 	Parameter PAUSED bound to: 3'b001 
 	Parameter ALIEN_HIT bound to: 3'b010 
@@ -78,18 +83,18 @@ INFO: [Synth 8-6157] synthesizing module 'aliens_movement_level2' [C:/Users/ms08
 	Parameter MOVE_INTERVAL bound to: 600000 - type: integer 
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_BOTTOM bound to: 430 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'aliens_movement_level2' (10#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:21]
-INFO: [Synth 8-6157] synthesizing module 'game_state_fsm' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:21]
-	Parameter START_SCREEN bound to: 2'b00 
-	Parameter PLAYING bound to: 2'b01 
-	Parameter LEVEL_1_WIN bound to: 2'b10 
-	Parameter LEVEL_2_WIN bound to: 2'b11 
-	Parameter LOSE bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'aliens_movement_level2' (10#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:21]
+INFO: [Synth 8-6157] synthesizing module 'game_state_fsm' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:1]
+	Parameter START_SCREEN bound to: 3'b000 
+	Parameter PLAYING bound to: 3'b001 
+	Parameter LEVEL_1_WIN bound to: 3'b010 
+	Parameter LEVEL_2_WIN bound to: 3'b011 
+	Parameter LOSE bound to: 3'b100 
 	Parameter LEVEL_1 bound to: 2'b01 
 	Parameter LEVEL_2 bound to: 2'b10 
-WARNING: [Synth 8-151] case item 2'b11 is unreachable [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'game_state_fsm' (11#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:21]
-INFO: [Synth 8-6157] synthesizing module 'tank_control' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/tank_control.v:21]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'game_state_fsm' (11#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tank_control' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/tank_control.v:21]
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 480 - type: integer 
 	Parameter TANK_WIDTH bound to: 32 - type: integer 
@@ -97,8 +102,8 @@ INFO: [Synth 8-6157] synthesizing module 'tank_control' [C:/Users/ms08752/SpaceF
 	Parameter MOVE_SPEED bound to: 4 - type: integer 
 	Parameter TANK_Y bound to: 400 - type: integer 
 	Parameter MOVE_INTERVAL bound to: 500000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'tank_control' (12#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/tank_control.v:21]
-INFO: [Synth 8-6157] synthesizing module 'bullet_movement' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'tank_control' (12#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/tank_control.v:21]
+INFO: [Synth 8-6157] synthesizing module 'bullet_movement' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v:21]
 	Parameter SCREEN_WIDTH bound to: 640 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 480 - type: integer 
 	Parameter BULLET_WIDTH bound to: 2 - type: integer 
@@ -112,53 +117,76 @@ INFO: [Synth 8-6157] synthesizing module 'bullet_movement' [C:/Users/ms08752/Spa
 	Parameter MOVING bound to: 3'b010 
 	Parameter COOLDOWN bound to: 3'b011 
 	Parameter PAUSED bound to: 3'b100 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v:134]
-INFO: [Synth 8-6155] done synthesizing module 'bullet_movement' (13#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v:21]
-INFO: [Synth 8-226] default block is never used [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:316]
-INFO: [Synth 8-6155] done synthesizing module 'TopLevelModule' (14#1) [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:21]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v:134]
+INFO: [Synth 8-6155] done synthesizing module 'bullet_movement' (13#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/bullet_movement.v:21]
+INFO: [Synth 8-6157] synthesizing module 'start_screen' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Start_Screen.v:2]
+INFO: [Synth 8-6157] synthesizing module 'start_bitmap_display' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Start_Bitmap.v:2]
+	Parameter H_OFFSET bound to: 64 - type: integer 
+	Parameter V_OFFSET bound to: 112 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_bitmap_display' (14#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Start_Bitmap.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'start_screen' (15#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Start_Screen.v:2]
+INFO: [Synth 8-6157] synthesizing module 'level1_win_screen' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level1_Win.v:2]
+INFO: [Synth 8-6157] synthesizing module 'level1_win_bitmap_display' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/1_Win_Bitmap.v:2]
+	Parameter H_OFFSET bound to: 192 - type: integer 
+	Parameter V_OFFSET bound to: 176 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'level1_win_bitmap_display' (16#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/1_Win_Bitmap.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'level1_win_screen' (17#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level1_Win.v:2]
+INFO: [Synth 8-6157] synthesizing module 'level2_win_screen' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level2_Win.v:2]
+INFO: [Synth 8-6157] synthesizing module 'level2_win_bitmap_display' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/2_Win_Bitmap.v:2]
+	Parameter H_OFFSET bound to: 192 - type: integer 
+	Parameter V_OFFSET bound to: 176 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'level2_win_bitmap_display' (18#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/2_Win_Bitmap.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'level2_win_screen' (19#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level2_Win.v:2]
+INFO: [Synth 8-6157] synthesizing module 'lose_screen' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level_Lose.v:2]
+INFO: [Synth 8-6157] synthesizing module 'lose_bitmap_display' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Lose_Bitmap.v:2]
+	Parameter H_OFFSET bound to: 192 - type: integer 
+	Parameter V_OFFSET bound to: 176 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'lose_bitmap_display' (20#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Lose_Bitmap.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'lose_screen' (21#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/Level_Lose.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'TopLevelModule' (22#1) [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/TopLevelModule.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1048.395 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1030.930 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1048.395 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1030.930 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1048.395 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1030.930 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1048.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1030.930 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc]
-Finished Parsing XDC File [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopLevelModule_propImpl.xdc].
+Parsing XDC File [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc]
+Finished Parsing XDC File [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/constrs_1/new/SpaceForceX.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopLevelModule_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TopLevelModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1097.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1096.512 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1097.020 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1096.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'ps2_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'game_state_fsm'
@@ -170,26 +198,27 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
                     load |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'ps2_rx'
-WARNING: [Synth 8-327] inferring latch for variable 'data_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:40]
-WARNING: [Synth 8-327] inferring latch for variable 'current_alien_row_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:265]
-WARNING: [Synth 8-327] inferring latch for variable 'current_alien_col_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:264]
-WARNING: [Synth 8-327] inferring latch for variable 'rel_x_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:261]
-WARNING: [Synth 8-327] inferring latch for variable 'rel_y_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:262]
-WARNING: [Synth 8-327] inferring latch for variable 'current_alien_row_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:249]
-WARNING: [Synth 8-327] inferring latch for variable 'current_alien_col_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:248]
-WARNING: [Synth 8-327] inferring latch for variable 'rel_x_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:245]
-WARNING: [Synth 8-327] inferring latch for variable 'rel_y_reg' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:246]
+WARNING: [Synth 8-327] inferring latch for variable 'data_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/ascii_rom.v:40]
+WARNING: [Synth 8-327] inferring latch for variable 'current_alien_row_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:265]
+WARNING: [Synth 8-327] inferring latch for variable 'current_alien_col_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:264]
+WARNING: [Synth 8-327] inferring latch for variable 'rel_x_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:261]
+WARNING: [Synth 8-327] inferring latch for variable 'rel_y_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement_level1.v:262]
+WARNING: [Synth 8-327] inferring latch for variable 'current_alien_row_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:249]
+WARNING: [Synth 8-327] inferring latch for variable 'current_alien_col_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:248]
+WARNING: [Synth 8-327] inferring latch for variable 'rel_x_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:245]
+WARNING: [Synth 8-327] inferring latch for variable 'rel_y_reg' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/aliens_movement.v:246]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-            START_SCREEN |                               01 |                               00
-                 PLAYING |                               11 |                               01
-             LEVEL_2_WIN |                               00 |                               11
-             LEVEL_1_WIN |                               10 |                               10
+            START_SCREEN |                              000 |                              000
+                 PLAYING |                              001 |                              001
+                    LOSE |                              010 |                              100
+             LEVEL_1_WIN |                              011 |                              010
+             LEVEL_2_WIN |                              100 |                              011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'game_state_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -200,24 +229,25 @@ Detailed RTL Component Info :
 	   2 Input   12 Bit       Adders := 1     
 	   3 Input   12 Bit       Adders := 2     
 	   3 Input   11 Bit       Adders := 8     
-	   2 Input   11 Bit       Adders := 61    
-	   2 Input   10 Bit       Adders := 35    
-	   2 Input    9 Bit       Adders := 21    
+	   2 Input   11 Bit       Adders := 65    
+	   2 Input   10 Bit       Adders := 43    
+	   2 Input    9 Bit       Adders := 22    
+	   2 Input    8 Bit       Adders := 3     
 	   2 Input    5 Bit       Adders := 1     
 	   3 Input    5 Bit       Adders := 4     
 	   2 Input    4 Bit       Adders := 1     
-	   2 Input    1 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 5     
 +---Registers : 
 	               21 Bit    Registers := 2     
 	               11 Bit    Registers := 2     
-	               10 Bit    Registers := 65    
+	               10 Bit    Registers := 73    
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
-	                4 Bit    Registers := 4     
-	                3 Bit    Registers := 4     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 49    
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 5     
+	                1 Bit    Registers := 63    
 +---Muxes : 
+	 257 Input  512 Bit        Muxes := 1     
 	  33 Input   32 Bit        Muxes := 2     
 	  19 Input   32 Bit        Muxes := 4     
 	  20 Input   32 Bit        Muxes := 2     
@@ -230,20 +260,22 @@ Detailed RTL Component Info :
 	 577 Input    8 Bit        Muxes := 1     
 	  17 Input    5 Bit        Muxes := 1     
 	   3 Input    4 Bit        Muxes := 3     
-	   2 Input    4 Bit        Muxes := 4     
-	   4 Input    4 Bit        Muxes := 2     
-	   5 Input    4 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 16    
-	   3 Input    2 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 8     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 27    
+	   3 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 13    
-	   4 Input    2 Bit        Muxes := 3     
-	   3 Input    1 Bit        Muxes := 9     
-	   2 Input    1 Bit        Muxes := 232   
+	   2 Input    2 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 8     
+	   2 Input    1 Bit        Muxes := 239   
 	 577 Input    1 Bit        Muxes := 1     
 	   4 Input    1 Bit        Muxes := 4     
 	  20 Input    1 Bit        Muxes := 6     
 	   6 Input    1 Bit        Muxes := 6     
+	 512 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -259,26 +291,32 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'gameStateMachine/current_level_reg[1]__0/Q' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:49]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:49]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:49]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'gameStateMachine/current_level_reg[0]__0/Q' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:49]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:49]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/ms08752/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:49]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'gameStateMachine/current_level_reg[1]__0/Q' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'gameStateMachine/current_level_reg[0]__0/Q' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.srcs/sources_1/new/GameScreenFSM.v:29]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:50 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping	Report
-+-------------+------------+---------------+----------------+
-|Module Name  | RTL Object | Depth x Width | Implemented As | 
-+-------------+------------+---------------+----------------+
-|tank_control | p_0_out    | 32x9          | LUT            | 
-|tank_control | p_0_out    | 32x9          | LUT            | 
-+-------------+------------+---------------+----------------+
++--------------------------+------------+---------------+----------------+
+|Module Name               | RTL Object | Depth x Width | Implemented As | 
++--------------------------+------------+---------------+----------------+
+|tank_control              | p_0_out    | 32x9          | LUT            | 
+|level1_win_bitmap_display | p_0_out    | 128x226       | LUT            | 
+|level2_win_bitmap_display | p_0_out    | 128x211       | LUT            | 
+|lose_bitmap_display       | p_0_out    | 128x80        | LUT            | 
+|tank_control              | p_0_out    | 32x9          | LUT            | 
+|level1_win_screen         | p_0_out    | 128x226       | LUT            | 
+|level2_win_screen         | p_0_out    | 128x211       | LUT            | 
+|lose_screen               | p_0_out    | 128x80        | LUT            | 
++--------------------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -287,19 +325,19 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:57 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:57 . Memory (MB): peak = 1096.512 ; gain = 65.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:01:00 . Memory (MB): peak = 1121.992 ; gain = 91.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -317,37 +355,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:01:03 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:01:03 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:01:03 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:01:03 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:01:04 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:01:04 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -363,46 +401,47 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     2|
+|1     |BUFG   |     5|
 |2     |CARRY4 |   240|
-|3     |LUT1   |    71|
-|4     |LUT2   |   140|
-|5     |LUT3   |   196|
-|6     |LUT4   |   760|
-|7     |LUT5   |   275|
-|8     |LUT6   |   382|
-|9     |MUXF7  |     3|
-|10    |FDCE   |    40|
-|11    |FDPE   |     2|
-|12    |FDRE   |   340|
-|13    |FDSE   |    24|
-|14    |LD     |    19|
-|15    |LDP    |     2|
-|16    |IBUF   |     4|
-|17    |OBUF   |    14|
+|3     |LUT1   |    90|
+|4     |LUT2   |   199|
+|5     |LUT3   |   295|
+|6     |LUT4   |   875|
+|7     |LUT5   |   677|
+|8     |LUT6   |  1944|
+|9     |MUXF7  |   245|
+|10    |MUXF8  |    62|
+|11    |FDCE   |    45|
+|12    |FDPE   |     1|
+|13    |FDRE   |   483|
+|14    |FDSE   |    24|
+|15    |LD     |    19|
+|16    |LDP    |     2|
+|17    |IBUF   |     4|
+|18    |OBUF   |    14|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:01:04 . Memory (MB): peak = 1127.297 ; gain = 96.367
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 6 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1097.020 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1097.020 ; gain = 48.625
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:01:01 . Memory (MB): peak = 1127.297 ; gain = 30.785
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:01:04 . Memory (MB): peak = 1127.297 ; gain = 96.367
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1107.730 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 264 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1139.508 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 568 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1110.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1139.508 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 21 instances were transformed.
   LD => LDCE: 19 instances
   LDP => LDPE: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-50 Infos, 10 Warnings, 6 Critical Warnings and 0 Errors encountered.
+69 Infos, 9 Warnings, 8 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1110.727 ; gain = 62.332
-INFO: [Common 17-1381] The checkpoint 'C:/Users/ms08752/SpaceForceX/SpaceForceX.runs/synth_1/TopLevelModule.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:01:10 . Memory (MB): peak = 1139.508 ; gain = 108.578
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Amn Naqvi/Desktop/Disaster-Strikes-Digital-Logic-Design-/SpaceForceX/SpaceForceX.runs/synth_1/TopLevelModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopLevelModule_utilization_synth.rpt -pb TopLevelModule_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 12 14:24:57 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 12 16:07:45 2024...

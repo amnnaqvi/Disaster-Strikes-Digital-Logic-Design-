@@ -1,45 +1,25 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12/11/2024 03:12:04 PM
-// Design Name: 
-// Module Name: GameScreenFSM
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 module game_state_fsm(
     input wire clk, 
     input wire reset, 
     input wire tank_hit,       // Signal when tank is hit by alien
     input wire all_aliens_destroyed, // Signal when no aliens remain
     input wire start_game,     // Input to start the game from start screen
-    output reg [1:0] game_state, // 00: start screen, 01: playing, 10: win, 11: lose
+    output reg [2:0] game_state, // 000: start screen, 001: playing, 010: level 1 win, 011: level 2 win, 100: lose
     output reg [1:0] current_level, // Tracks the current level
-    output reg level_reset
+    output reg level_reset     // Signal to explicitly reset the level
 );
     // Updated state encoding
-    localparam START_SCREEN   = 2'b00, 
-               PLAYING        = 2'b01, 
-               LEVEL_1_WIN    = 2'b10, 
-               LEVEL_2_WIN    = 2'b11, 
-               LOSE           = 2'b11;
+    localparam START_SCREEN   = 3'b000, 
+               PLAYING        = 3'b001, 
+               LEVEL_1_WIN    = 3'b010, 
+               LEVEL_2_WIN    = 3'b011, 
+               LOSE           = 3'b100;
 
     // Level constants
     localparam LEVEL_1 = 2'b01, LEVEL_2 = 2'b10;
     
     // State and level registers
-    reg [1:0] current_state, next_state;
+    reg [2:0] current_state, next_state;
     
     // State transition logic
     always @(posedge clk or posedge reset) begin
@@ -51,12 +31,8 @@ module game_state_fsm(
         end else begin
             current_state <= next_state;
             
-            // Level reset logic
-            if (next_state != current_state || 
-                (current_state == LOSE && start_game) || 
-                (current_state == LEVEL_1_WIN && start_game) ||
-                (current_state == LEVEL_2_WIN && start_game) ||
-                (current_state == PLAYING && (tank_hit || all_aliens_destroyed))) begin
+            // Simplified level reset logic
+            if (reset || next_state != current_state) begin
                 level_reset <= 1'b1;
             end else begin
                 level_reset <= 1'b0;
