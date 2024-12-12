@@ -11,7 +11,7 @@
 - **Aneeza Khan**
 - **Syeda Seerat Zahra**
 
-*Habib University CS 2027*
+*- Habib University CS 2027*
 
 ---
 
